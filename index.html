@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Earthquake Tracker | WebApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="day">
+  <div class="wrapper">
+    <header>
+      <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="m-0">Earthquake Tracker</h1>
+        <div>
+          <label for="themeToggle" class="form-check-label me-2">Theme</label>
+          <input type="checkbox" id="themeToggle" class="form-check-input">
+          <span id="themeText">Day</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content container-main">
+      <div class="controls mb-4 text-center">
+        <button id="btnMag" class="btn btn-primary">Sort by Magnitude</button>
+        <button id="btnTime" class="btn btn-success">Sort by Date</button>
+        <button id="btnDepth" class="btn btn-info">Sort by Depth</button>
+      </div>
+
+      <div class="alert-settings mb-4 text-center">
+        <input type="text" id="userRegion" placeholder="Enter your country or state">
+        <button id="setAlert" class="btn btn-warning btn-sm">Set Region</button>
+        <button id="checkAlert" class="btn btn-danger btn-sm">Check Alerts</button>
+      </div>
+
+      <div id="chartContainer" class="mb-4">
+        <canvas id="quakeChart"></canvas>
+      </div>
+      <div id="mapContainer" class="mb-4"></div>
+      <div id="alertContainer"></div>
+      <div id="quakeContainer"></div>
+    </div>
+
+    <footer>
+      <p>Developed © <span id="currentYear"></span></p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
